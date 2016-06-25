@@ -1,0 +1,44 @@
+Predicting Blood Pressure Categories
+========================================================
+author: Gloria Jackson
+date: June 26, 2016
+
+Blood Pressure Numbers and Categories
+========================================================
+
+Blood pressure is usually recorded as two numbers written as a ratio (e.g. 118/78 mm Hg). 
+- The top number, Systolic, measures the pressure in the arteries when the heart beats. 
+- The bottom number, Diastolic, measures the pressure in the arteries between heart beats.
+
+The ratio can be used to predict your blood pressure category:  
+- Normal 
+- Prehypertension 
+- Hypertension Stage 1 
+- Hypertension Stage 2 
+- Hypertensive Crisis 
+
+Sample Blood Pressure Readings
+========================================================
+
+```{r}
+bpdat <- read.csv('/Users/gloriajackson/ddprod3/bpreadings.csv',header = TRUE, sep = ",")
+bpdat
+```
+
+Plot the Sample Blood Pressure Readings
+========================================================
+
+```{r, echo=FALSE}
+library(ggplot2)
+ggplot(bpdat)+
+         geom_point (aes(x = Systolic, y = Diastolic, type = 'p', colour = factor(Category)))
+```
+
+How is Blood Pressure Diagnosed?
+========================================================
+
+Starting at the age of 20, the American Heart Association recommends a blood pressure screening at your regular healthcare visit or once every 2 years, if your blook pressure is less than 120/80 mm Hg. 
+
+Access my blood pressure application at https://gdunnjackson.shinyapps.io/ddprod3/ to make a prediction of your blood pressure category. 
+
+Reference:  http://www.heart.org/HEARTORG/Conditions/HighBloodPressure/AboutHighBloodPressure/Understanding-Blood-Pressure-Readings_UCM_301764_Article.jsp#.V230vVe9bFI
