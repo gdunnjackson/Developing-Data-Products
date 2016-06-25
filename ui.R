@@ -4,7 +4,7 @@ library(shiny)
 shinyUI(
   pageWithSidebar(
     # Application title
-    headerPanel("Predict Your Blood Pressure Category (enter your BP readings and press the 'Submit' button)"),
+    headerPanel("Predict Your Blood Pressure Category"),
     sidebarPanel(
      numericInput('systolic', 'Systolic(Upper #)', 118, min = 80, max = 200, step = 5),                                                                              numericInput('diastolic', 'Diastolic(Lower #)', 78, min = 60, max = 120, step = 5),
 
